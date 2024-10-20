@@ -32,7 +32,7 @@
                 </select>
             </div>
             </select>
-            <button type="submit" class="btn btn-success mt-4">Simpan</button>
+            <button type="submit" class="btn btn-success mt-3">Simpan</button>
         </form>
     </div>
 @endsection

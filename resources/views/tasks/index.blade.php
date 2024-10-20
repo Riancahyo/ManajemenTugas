@@ -44,7 +44,7 @@
                             <td class="text-center">{{ $task->due_date }}</td>
                             <td class="text-center">
                                 <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-info btn-sm">Detail</a>
-                                <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning btn-sm mx-1">Edit</a>
+                                <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning btn-sm mx-1 mr-2 ml-2">Edit</a>
                                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')

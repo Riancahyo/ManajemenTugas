@@ -37,7 +37,7 @@
                 <input type="date" name="due_date" class="form-control" value="{{ $task->due_date }}" required>
             </div>
 
-            <button type="submit" class="btn btn-success mb-3 mt-2">Perbarui Tugas</button>
+            <button type="submit" class="btn btn-success mb-2 mt-3">Perbarui Tugas</button>
         </form>
     </div>
 @endsection

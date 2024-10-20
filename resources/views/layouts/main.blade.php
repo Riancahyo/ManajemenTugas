@@ -9,20 +9,26 @@
         html, body {
             height: 100%;
             margin: 0;
+            font-size: 16px; /* Base font size */
         }
 
         body {
             display: flex;
             flex-direction: column;
+            font-size: 1.1rem; /* Increased base font size for body */
         }
 
-        .container {
+        .container-fluid {
             flex: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 30px;
+            padding-right: 30px;
         }
 
-        footer {
+        header, footer {
             background-color: #02b0fa;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
         }
 
@@ -30,20 +36,31 @@
             font-weight: bold;
         }
 
+        .table thead th {
+            border-top: none;
+        }
+
+        /* Increase font size for various elements */
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        .btn { font-size: 1.1rem; }
+        .alert { font-size: 1.1rem; }
+        .table { font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
-    <header style="background-color: #02b0fa; padding: 10px; text-align: center;">
-        <h1>Manajemen Tugas</h1>
+    <header>
+        <h1 class="m-0">Manajemen Tugas</h1>
     </header>
 
-    <div class="container mt-5">
+    <div class="container-fluid mt-4">
         @yield('content')
     </div>
 
     <footer>
-        <p class="text-bold mt-2">Manajemen Tugas, Rian Cahyo Anggoro</p>
+        <p class="text-bold m-0">Manajemen Tugas, Rian Cahyo Anggoro</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
