@@ -27,7 +27,7 @@
                 <label for="status" class="font-weight-bold">Status</label>
                 <select name="status" class="form-control" required>
                     <option value="pending" {{ $task->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                    <option value="in_progress" {{ $task->status == 'in_progress' ? 'selected' : '' }}>in_progress</option>
+                    <option value="in_progress" {{ $task->status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
                     <option value="completed" {{ $task->status == 'completed' ? 'selected' : '' }}>Completed</option>
                 </select>
             </div>
