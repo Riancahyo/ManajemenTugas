@@ -9,19 +9,19 @@
             @csrf
             <div class="form-group">
                 <label for="title" class="font-weight-bold">User ID</label>
-                <input type="text" name="user_id" class="form-control" required>
+                <input type="text" name="user_id" class="form-control">
             </div>
             <div class="form-group">
                 <label for="title" class="font-weight-bold">Judul</label>
-                <input type="text" name="title" class="form-control" required>
+                <input type="text" name="title" class="form-control">
             </div>
             <div class="form-group">
                 <label for="description" class="font-weight-bold">Deskripsi</label>
-                <textarea name="description" class="form-control" required></textarea>
+                <textarea name="description" class="form-control"></textarea>
             </div>
             <div class="form-group">
                 <label for="due_date" class="font-weight-bold">Tanggal Selesai</label>
-                <input type="date" name="due_date" class="form-control" required>
+                <input type="date" name="due_date" class="form-control">
             </div>
             <div class="form-group">
                 <label for="status" class="font-weight-bold">Status</label>
@@ -31,7 +31,14 @@
                     <option value="completed">Completed</option>
                 </select>
             </div>
-            </select>
+            <div class="form-group">
+                <label for="status" class="font-weight-bold">Kategori</label>
+                <select name="status" class="form-control">
+                    <?php foreach ($category as $c) { ?>
+                    <option value="{{$c->id}}"> <?php echo $c->name ?></option>
+                    <?php } ?>
+                </select>
+            </div>
             <button type="submit" class="btn btn-success mt-3">Simpan</button>
         </form>
     </div>

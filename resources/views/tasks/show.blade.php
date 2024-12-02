@@ -23,6 +23,9 @@
                 
                 <h5 class="card-title">Tanggal Selesai</h5>
                 <p class="card-text">{{ $task->due_date }}</p>
+
+                <h5 class="card-title">Kategori</h5>
+                <p class="card-text">{{ $task->category->name }}</p>
                 
                 <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary mt-3">Edit</a>
             </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreTaskRequest;
 
 class TaskController extends Controller
 {
@@ -17,11 +19,12 @@ class TaskController extends Controller
     // Menampilkan form untuk membuat task baru
     public function create()
     {
-        return view('tasks.create');
+        $category = Category::all();
+        return view('tasks.create', compact('category'));
     }
 
     // Menyimpan task baru ke database
-    public function store(Request $request)
+    public function store(StoreTaskRequest $request)
     {
         // Validasi input
         $validatedData = $request->validate([

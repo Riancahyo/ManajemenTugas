@@ -2,28 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\User;
+use App\Models\Task;
 
 class UserController extends Controller
 {
-    public function store(Request $request)
+    public function tampil(): string
     {
-        // Validasi input
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
-        ]);
+    return "welcome";
+    }
 
-        // Buat user baru dan simpan ke database
-        User::create([
-            'name' => $validatedData['nama'],
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),  // bcrypt hashing otomatis
-        ]);
-
-        return response()->json(['message' => 'User created successfully']);
+    public function show(string $id){
+        $data = Task::find($id);
+        return view('tasks.profil', ['dataku' => $data, 'data2' => 10]);
     }
 }

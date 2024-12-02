@@ -1,8 +1,19 @@
-@extends('layouts.main')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Tasks') }}
+        </h2>
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
 
-@section('title', 'Daftar Tugas')
+{{-- @extends('layouts.main') --}}
 
-@section('content')
+{{-- @section('title', 'Daftar Tugas') --}}
+
+{{-- @section('content') --}}
     <h1 class="mb-4">Daftar Tugas</h1>
 
     @if (session('success'))
@@ -13,10 +24,7 @@
 
     <div class="d-flex justify-content-between align-items-center mb-3">
         <a href="{{ route('tasks.create') }}" class="btn btn-primary">Tambah Tugas Baru</a>
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="btn btn-danger">Logout</button>
-        </form>
+        
     </div>
 
     <div class="card">
@@ -30,6 +38,7 @@
                         <th class="text-center">Deskripsi</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Tanggal Selesai</th>
+                        <th class="text-center">Kategori</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -42,6 +51,7 @@
                             <td class="text-center">{{ $task->description }}</td>
                             <td class="text-center">{{ $task->status }}</td>
                             <td class="text-center">{{ $task->due_date }}</td>
+                            <td class="text-center">{{ $task->category->name }}</td>
                             <td class="text-center">
                                 <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-info btn-sm">Detail</a>
                                 <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning btn-sm mx-1 mr-2 ml-2">Edit</a>
@@ -57,4 +67,10 @@
             </table>
         </div>
     </div>
-@endsection
+{{-- @endsection --}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
